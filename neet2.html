@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEET 2024 Re-Revised Score Card</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f8ff;
+    }
+    .topbar, .header, .nav, .main-content, .footer {
+      width: 100%;
+    }
+    .topbar {
+      background: #e0e0e0;
+      font-size: 12px;
+      padding: 5px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #fff;
+    }
+    .logo-section {
+      display: flex;
+      align-items: center;
+    }
+    .logo-section img {
+      height: 60px;
+      margin-right: 10px;
+    }
+    .nav {
+      background-color: #f7941d;
+      padding: 10px 0;
+      text-align: center;
+    }
+    .nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    .main-content {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .main-content h1 {
+      font-size: 28px;
+      color: #333;
+    }
+    .main-content a {
+      font-size: 18px;
+      color: #0044cc;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .footer {
+      background-color: #111;
+      color: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 30px 0;
+    }
+    .footer h3 {
+      border-bottom: 2px solid #f7941d;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    .footer a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin-top: 5px;
+      font-size: 14px;
+    }
+    form {
+      max-width: 600px;
+      margin: auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+    form input, form select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    .form-title {
+      background-color: #0056d2;
+      color: white;
+      padding: 10px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+    .submit-btn {
+      background-color: #0056d2;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background-color: #0044aa;
+    }
+    #scorecard-page, #marksheet {
+      display: none;
+      padding: 40px 20px;
+    }
+    .scorecard {
+      max-width: 800px;
+      margin: auto;
+      background-color: white;
+      border: 2px solid #ccc;
+      padding: 20px;
+      font-size: 14px;
+    }
+    .scorecard-header {
+      text-align: center;
+      border-bottom: 2px solid #000;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .scorecard-section {
+      margin-bottom: 15px;
+    }
+    .scorecard-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    .scorecard-table th, .scorecard-table td {
+      border: 1px solid #000;
+      padding: 8px;
+      text-align: center;
+    }
+    .scorecard-footer {
+      margin-top: 20px;
+      font-size: 12px;
+    }
+  </style>
+  <script>
+    function openScoreCardPage() {
+      document.getElementById("main-home").style.display = "none";
+      document.getElementById("scorecard-page").style.display = "block";
+    }
+    function populateDOBFields() {
+      const daySelect = document.getElementById("dob-day");
+      const monthSelect = document.getElementById("dob-month");
+      const yearSelect = document.getElementById("dob-year");
+      for (let d = 1; d <= 31; d++) {
+        daySelect.innerHTML += `<option value="${d}">${d}</option>`;
+      }
+      const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      months.forEach((m, idx) => {
+        monthSelect.innerHTML += `<option value="${idx + 1}">${m}</option>`;
+      });
+      const currentYear = new Date().getFullYear();
+      for (let y = 2000; y <= currentYear; y++) {
+        yearSelect.innerHTML += `<option value="${y}">${y}</option>`;
+      }
+    }
+    function validateAndShowMarksheet(event) {
+      event.preventDefault();
+      const appNo = document.getElementById("appNo").value;
+      const email = document.getElementById("email").value;
+      const mobile = document.getElementById("mobile").value;
+      if (appNo === "250411981324" && email === "dalalseema00@gmail.com" && mobile === "9354050452") {
+        document.getElementById("scorecard-page").style.display = "none";
+        document.getElementById("marksheet").style.display = "block";
+      } else {
+        alert("Wrong Enrollment Number or Information");
+      }
+    }
+    window.onload = populateDOBFields;
+  </script>
+</head>
+<body>
+  <div class="topbar">
+    <div>
+      भारत सरकार | शिक्षा मंत्रालय <br>
+      Government of India | Ministry of Education
+    </div>
+    <div>
+      Skip to main content | Sitemap | A- A A+
+    </div>
+  </div>
+  <div class="header">
+    <div class="logo-section">
+      <img src="https://cdnbbsr.s3waas.gov.in/s3bb2a64a4f1e6e8c3fa4de6d037b1e686/uploads/2022/07/2022070133.jpg" alt="GoI Logo">
+      <div>
+        <div style="font-size: 20px; font-weight: bold;">उच्च शिक्षा विभाग<br>Department of Higher Education</div>
+      </div>
+    </div>
+    <div style="text-align: right;">
+      <div style="font-size: 14px; font-weight: bold;">
+        राष्ट्रीय पात्रता सह प्रवेश परीक्षा (स्नातक)<br>
+        NATIONAL ELIGIBILITY CUM ENTRANCE TEST (UG)
+      </div>
+      <img src="https://neet.nta.nic.in/images/logo.png" alt="NTA Logo" height="50">
+    </div>
+  </div>
+  <div class="nav">
+    <a href="#">HOME</a>
+    <a href="#">INFORMATION</a>
+    <a href="#">FAQ</a>
+    <a href="#">IMPORTANT DOWNLOAD</a>
+    <a href="#">CONTACT</a>
+    <a href="#">CANDIDATE ACTIVITY</a>
+  </div>
+  <div id="main-home" class="main-content">
+    <h1>National Eligibility Cum Entrance Test
+      <pre>
+        UG (2025)
+      </pre>
+    </h1>
+    <a onclick="openScoreCardPage()">National Eligibility Cum Entrance Test Result </a>
+  </div>
+  <div id="scorecard-page">
+    <form onsubmit="validateAndShowMarksheet(event)">
+      <div class="form-title">
+        Please check your photo and QR code on your scorecard. If either the photo or the QR code is missing, kindly re-download it
+      </div>
+      <label>Application No.*</label>
+      <input type="text" id="appNo" required>
+      <label>Date of Birth*</label>
+      <div style="display: flex; gap: 10px;">
+        <select id="dob-day" required><option>--Day--</option></select>
+        <select id="dob-month" required><option>--Month--</option></select>
+        <select id="dob-year" required><option>--Year--</option></select>
+      </div>
+      <label>Candidate Email*</label>
+      <input type="email" id="email" required>
+      <div style="text-align: center; color: blue; font-weight: bold;">OR</div>
+      <label>Candidate Mobile / Alternate Mobile*</label>
+      <input type="tel" id="mobile" required>
+      <label>Enter Security Pin (Case Sensitive)*</label>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="Screenshot 2025-06-13 112840.png" alt="Captcha" class="captcha-img" height="60px" width="100px">
+        <input type="text" required>
+      </div>
+      <div style="text-align: center; margin-top: 20px;">
+        <button class="submit-btn" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+  <div id="marksheet" class="main-content">
+  <div id="print-area" style="text-align: center;">
+    <img src="scoreboard_page-0001.jpg" alt="NEET Score Card" style="max-width: 100%; height: auto; border: 2px solid #ccc; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
+  </div>
+  <div style="text-align: center; margin-top: 20px;">
+    <button class="submit-btn" onclick="printImage()">Print Score Card</button>
+  </div>
+</div>
+
+  <div class="footer">
+    <div>
+      <h3>Helpdesk</h3>
+      <a href="#">› Contact Us</a>
+    </div>
+    <div>
+      <h3>Important Links</h3>
+      <a href="#">› National Testing Agency</a>
+    </div>
+  </div>
+  <script>
+  function printImage() {
+    const printContents = document.getElementById("print-area").innerHTML;
+    const newWin = window.open('', '_blank');
+    newWin.document.write(`
+      <html>
+        <head>
+          <title>Print Score Card</title>
+          <style>
+            body {
+              margin: 0;
+              padding: 20px;
+              text-align: center;
+              font-family: Arial, sans-serif;
+            }
+            img {
+              max-width: 100%;
+              height: auto;
+              border: 2px solid #ccc;
+              box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            }
+          </style>
+        </head>
+        <body onload="window.print(); window.close();">
+          ${printContents}
+        </body>
+      </html>
+    `);
+    newWin.document.close();
+  }
+</script>
+
+</body>
+</html>
